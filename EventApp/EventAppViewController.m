@@ -15,13 +15,9 @@
 @synthesize timeField;
 
 -(IBAction) newEvent {
-    EKEventStore *eventDB = [[EKEventStore alloc] init];
-    
-    EKEvent *myEvent = [EKEvent eventWithEventStore:eventDB];
-    
-    EKAlarm *myAlarm = [EKAlarm alarmWithRelativeOffset:0];
-    
-    
+    EKEventStore *eventDB = [[EKEventStore alloc] init];    
+    EKEvent *myEvent = [EKEvent eventWithEventStore:eventDB];    
+    EKAlarm *myAlarm = [EKAlarm alarmWithRelativeOffset:0];    
     
     NSDate *dateTmp = [NSDate date];
     
@@ -38,24 +34,14 @@
     else {
         delta = 60 * 60 * 24 * myint;
     } 
-    
-    
-    //NSTimeInterval delta = 60 * 60 * myint;
+
     dateTmp = [dateTmp dateByAddingTimeInterval:delta];
-    
-    
-    
-    
     
     myEvent.title = titleField.text;
     myEvent.startDate = dateTmp;
     myEvent.endDate = dateTmp;
     myEvent.alarms = [[NSArray alloc] initWithObjects: myAlarm, nil];
      
-    
-    
-    
-    
     [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
     
     NSError *err;
