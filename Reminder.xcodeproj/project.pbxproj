@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3506A5A12DD9614006F889E /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3506A5812DD9614006F889E /* MainWindow-iPad.xib */; };
 		B3706CED12DD6457002889EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3706CEC12DD6457002889EF /* UIKit.framework */; };
 		B3706CEF12DD6457002889EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3706CEE12DD6457002889EF /* Foundation.framework */; };
 		B3706CF112DD6457002889EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3706CF012DD6457002889EF /* CoreGraphics.framework */; };
@@ -20,11 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B3506A5912DD9614006F889E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		B3706CE812DD6457002889EF /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3706CEC12DD6457002889EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3706CEE12DD6457002889EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3706CF012DD6457002889EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B3706CF412DD6457002889EF /* Reminder-Info.plist */ = {isa = PBXFileReference; path = "Reminder-Info.plist"; sourceTree = "<group>"; };
+		B3706CF412DD6457002889EF /* Reminder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reminder-Info.plist"; sourceTree = "<group>"; };
 		B3706CF612DD6457002889EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3706CF812DD6457002889EF /* EventApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventApp-Prefix.pch"; sourceTree = "<group>"; };
 		B3706CF912DD6457002889EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3506A5712DD9613006F889E /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				B3506A5812DD9614006F889E /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		B3706CDD12DD6457002889EF = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 		B3706CF212DD6457002889EF /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				B3506A5712DD9613006F889E /* iPad */,
 				B3706CFB12DD6457002889EF /* EventAppAppDelegate.h */,
 				B3706CFC12DD6457002889EF /* EventAppAppDelegate.m */,
 				B3706CFE12DD6457002889EF /* MainWindow.xib */,
@@ -156,6 +167,7 @@
 				B3706CF712DD6457002889EF /* InfoPlist.strings in Resources */,
 				B3706D0012DD6457002889EF /* MainWindow.xib in Resources */,
 				B3706D0612DD6457002889EF /* EventAppViewController.xib in Resources */,
+				B3506A5A12DD9614006F889E /* MainWindow-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +187,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B3506A5812DD9614006F889E /* MainWindow-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3506A5912DD9614006F889E /* en */,
+			);
+			name = "MainWindow-iPad.xib";
+			sourceTree = "<group>";
+		};
 		B3706CF512DD6457002889EF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -240,7 +260,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventApp/EventApp-Prefix.pch";
 				INFOPLIST_FILE = "EventApp/Reminder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = Reminder;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -253,7 +275,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventApp/EventApp-Prefix.pch";
 				INFOPLIST_FILE = "EventApp/Reminder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = Reminder;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
