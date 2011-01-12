@@ -16,6 +16,7 @@
 		B3706D0012DD6457002889EF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3706CFE12DD6457002889EF /* MainWindow.xib */; };
 		B3706D0312DD6457002889EF /* EventAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3706D0212DD6457002889EF /* EventAppViewController.m */; };
 		B3706D0612DD6457002889EF /* EventAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3706D0412DD6457002889EF /* EventAppViewController.xib */; };
+		B3A66DFA12DD64AF00EE90EE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A66DF912DD64AF00EE90EE /* EventKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +24,17 @@
 		B3706CEC12DD6457002889EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3706CEE12DD6457002889EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3706CF012DD6457002889EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B3706CF412DD6457002889EF /* EventApp-Info.plist */ = {isa = PBXFileReference; path = "EventApp-Info.plist"; sourceTree = "<group>"; };
+		B3706CF412DD6457002889EF /* EventApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EventApp-Info.plist"; sourceTree = "<group>"; };
 		B3706CF612DD6457002889EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B3706CF812DD6457002889EF /* EventApp-Prefix.pch */ = {isa = PBXFileReference; path = "EventApp-Prefix.pch"; sourceTree = "<group>"; };
+		B3706CF812DD6457002889EF /* EventApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventApp-Prefix.pch"; sourceTree = "<group>"; };
 		B3706CF912DD6457002889EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B3706CFB12DD6457002889EF /* EventAppAppDelegate.h */ = {isa = PBXFileReference; path = EventAppAppDelegate.h; sourceTree = "<group>"; };
+		B3706CFB12DD6457002889EF /* EventAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventAppAppDelegate.h; sourceTree = "<group>"; };
 		B3706CFC12DD6457002889EF /* EventAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventAppAppDelegate.m; sourceTree = "<group>"; };
 		B3706CFF12DD6457002889EF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		B3706D0112DD6457002889EF /* EventAppViewController.h */ = {isa = PBXFileReference; path = EventAppViewController.h; sourceTree = "<group>"; };
+		B3706D0112DD6457002889EF /* EventAppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventAppViewController.h; sourceTree = "<group>"; };
 		B3706D0212DD6457002889EF /* EventAppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventAppViewController.m; sourceTree = "<group>"; };
 		B3706D0512DD6457002889EF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EventAppViewController.xib; sourceTree = "<group>"; };
+		B3A66DF912DD64AF00EE90EE /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 				B3706CED12DD6457002889EF /* UIKit.framework in Frameworks */,
 				B3706CEF12DD6457002889EF /* Foundation.framework in Frameworks */,
 				B3706CF112DD6457002889EF /* CoreGraphics.framework in Frameworks */,
+				B3A66DFA12DD64AF00EE90EE /* EventKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +75,7 @@
 				B3706CEC12DD6457002889EF /* UIKit.framework */,
 				B3706CEE12DD6457002889EF /* Foundation.framework */,
 				B3706CF012DD6457002889EF /* CoreGraphics.framework */,
+				B3A66DF912DD64AF00EE90EE /* EventKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,6 +277,7 @@
 				B3706D0B12DD6457002889EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

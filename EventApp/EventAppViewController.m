@@ -7,8 +7,83 @@
 //
 
 #import "EventAppViewController.h"
+#import <EventKit/EventKit.h>
 
 @implementation EventAppViewController
+
+@synthesize titleField;
+@synthesize timeField;
+
+-(IBAction) newEvent {
+    EKEventStore *eventDB = [[EKEventStore alloc] init];
+    
+    EKEvent *myEvent = [EKEvent eventWithEventStore:eventDB];
+    
+    EKAlarm *myAlarm = [EKAlarm alarmWithRelativeOffset:0];
+    
+    
+    
+    NSDate *dateTmp = [NSDate date];
+    
+    int myint = [timeField.text integerValue];  
+    
+    
+    NSTimeInterval delta;
+    if(segment.selectedSegmentIndex == 0){ 
+        delta = 60  * myint;
+    }
+    else if (segment.selectedSegmentIndex == 1){
+        delta = 60 * 60 * myint;
+    }
+    else {
+        delta = 60 * 60 * 24 * myint;
+    } 
+    
+    
+    //NSTimeInterval delta = 60 * 60 * myint;
+    dateTmp = [dateTmp dateByAddingTimeInterval:delta];
+    
+    
+    
+    
+    
+    myEvent.title = titleField.text;
+    myEvent.startDate = dateTmp;
+    myEvent.endDate = dateTmp;
+    myEvent.alarms = [[NSArray alloc] initWithObjects: myAlarm, nil];
+     
+    
+    
+    
+    
+    [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
+    
+    NSError *err;
+    
+    [eventDB saveEvent:myEvent span:EKSpanThisEvent error:&err];
+    
+    
+    if (err == noErr) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Event Created:"
+                              message:titleField.text
+                              delegate:nil
+                              cancelButtonTitle:@"Okay"
+                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
+    
+    titleField.text = @"";
+    timeField.text = @"";
+    
+    
+    //[myEvent release];
+    [eventDB release];
+    
+    
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,6 +97,10 @@
 - (void)dealloc
 {
     [super dealloc];
+    [EKEvent release];
+    [EKAlarm release];
+    [titleField release];
+    [timeField release];
 }
 
 - (void)didReceiveMemoryWarning

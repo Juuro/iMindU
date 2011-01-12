@@ -10,7 +10,15 @@
 
 @interface EventAppViewController : UIViewController {
 @private
+    IBOutlet UITextField *titleField;
+    IBOutlet UITextField *timeField;
+    IBOutlet UISegmentedControl *segment;
     
 }
+
+@property (nonatomic, retain) IBOutlet UITextField *titleField;
+@property (nonatomic, retain) IBOutlet UITextField *timeField;
+
+-(IBAction) newEvent;
 
 @end
