@@ -50,7 +50,7 @@
 					<object class="IBUIButton" id="676486454">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{118, 164}, {84, 32}}</string>
+						<string key="NSFrame">{{110, 162}, {101, 35}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -64,7 +64,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Add Event</string>
+						<string key="IBUINormalTitle">Add Alarm</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -141,7 +141,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Name</string>
+						<string key="IBUIText">Title</string>
 						<object class="NSFont" key="IBUIFont" id="896341725">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">17</double>
