@@ -13,12 +13,15 @@
     IBOutlet UITextField *titleField;
     IBOutlet UITextField *timeField;
     IBOutlet UISegmentedControl *segment;
-    
+    IBOutlet UILabel *previewTitle;
+    IBOutlet UILabel *previewDate;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *titleField;
 @property (nonatomic, retain) IBOutlet UITextField *timeField;
 
 -(IBAction) newEvent;
+-(IBAction) timeChange;
+-(NSDate *) computeDate;
 
 @end

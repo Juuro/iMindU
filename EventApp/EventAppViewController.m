@@ -50,9 +50,22 @@
     
     
     if (err == noErr) {
+        NSDateFormatter* formatterTime = [[[NSDateFormatter alloc] init] autorelease];
+        NSDateFormatter* formatterDate = [[[NSDateFormatter alloc] init] autorelease];
+        
+        [formatterTime setDateFormat:@"HH:mm"];
+        [formatterDate setDateFormat:@"dd.MM.yyyy"];
+        
+        //TODO: dateTemp durch computeDate ersetzen
+        NSString *alertTime = [formatterTime stringFromDate:dateTmp];
+        NSString *alertDate = [formatterDate stringFromDate:dateTmp];
+        
+        NSString *alertText = [NSString stringWithFormat:@"%@\n%@ Uhr %@", titleField.text, alertTime, alertDate];
+         
+        
         UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Event Created:"
-                              message:titleField.text
+                              initWithTitle:@"Alarm hinzugefügt:"
+                              message:alertText
                               delegate:nil
                               cancelButtonTitle:@"Okay"
                               otherButtonTitles:nil];
@@ -60,15 +73,71 @@
         [alert release];
     }
     
-    titleField.text = @"";
-    timeField.text = @"";
+    
+    [titleField setText:@""];
+    [timeField setText:@""];
     
     
     //[myEvent release];
-    [eventDB release];
+    [eventDB release];    
+}
+
+- (IBAction) timeChange {
+    int myint = [timeField.text integerValue];  
+    
+    NSDate *dateTmp = [NSDate date];
+    
+    NSTimeInterval delta;
+    if(segment.selectedSegmentIndex == 0){ 
+        delta = 60  * myint;
+    }
+    else if (segment.selectedSegmentIndex == 1){
+        delta = 60 * 60 * myint;
+    }
+    else {
+        delta = 60 * 60 * 24 * myint;
+    }
+    
+    dateTmp = [dateTmp dateByAddingTimeInterval:delta];
     
     
     
+    NSDateFormatter* formatterTime = [[[NSDateFormatter alloc] init] autorelease];
+    NSDateFormatter* formatterDate = [[[NSDateFormatter alloc] init] autorelease];
+        
+    [formatterTime setDateFormat:@"HH:mm"];
+    [formatterDate setDateFormat:@"dd.MM.yyyy"];
+    
+    //TODO: dateTemp durch computeDate ersetzen
+    NSString *alertTime = [formatterTime stringFromDate:dateTmp];
+    NSString *alertDate = [formatterDate stringFromDate:dateTmp];
+    
+    NSString *titleText = [NSString stringWithFormat:@"%@", titleField.text];
+    NSString *dateText = [NSString stringWithFormat:@"%@ Uhr %@", alertTime, alertDate];
+        
+           
+    [previewTitle setText:titleText];
+    [previewDate setText:dateText];
+}
+
+- (NSDate *) computeDate {
+    int myint = [timeField.text integerValue];
+    NSDate *dateTmp = [NSDate date];
+    
+    NSTimeInterval delta;
+    if(segment.selectedSegmentIndex == 0){ 
+        delta = 60  * myint;
+    }
+    else if (segment.selectedSegmentIndex == 1){
+        delta = 60 * 60 * myint;
+    }
+    else {
+        delta = 60 * 60 * 24 * myint;
+    }
+    
+    dateTmp = [dateTmp dateByAddingTimeInterval:delta];
+    
+    return dateTmp;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
