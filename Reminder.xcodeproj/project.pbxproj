@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B31EA6DE13709F7700C9F12B /* button-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = B31EA6DC13709F7700C9F12B /* button-highlight.png */; };
+		B31EA6DF13709F7700C9F12B /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = B31EA6DD13709F7700C9F12B /* button.png */; };
+		B31EA6E31370AB4900C9F12B /* bg-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = B31EA6E21370AB4900C9F12B /* bg-texture.png */; };
+		B31EA6EB1370C8EC00C9F12B /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = B31EA6EA1370C8EC00C9F12B /* note.png */; };
+		B31EA6F91370DC2500C9F12B /* note2.png in Resources */ = {isa = PBXBuildFile; fileRef = B31EA6F81370DC2500C9F12B /* note2.png */; };
+		B31EA6FB1371031A00C9F12B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B31EA6FA1371031A00C9F12B /* Default.png */; };
 		B3506A5A12DD9614006F889E /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3506A5812DD9614006F889E /* MainWindow-iPad.xib */; };
 		B3706CED12DD6457002889EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3706CEC12DD6457002889EF /* UIKit.framework */; };
 		B3706CEF12DD6457002889EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3706CEE12DD6457002889EF /* Foundation.framework */; };
@@ -21,6 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B31EA6DC13709F7700C9F12B /* button-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-highlight.png"; sourceTree = "<group>"; };
+		B31EA6DD13709F7700C9F12B /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		B31EA6E21370AB4900C9F12B /* bg-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-texture.png"; sourceTree = "<group>"; };
+		B31EA6EA1370C8EC00C9F12B /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
+		B31EA6F81370DC2500C9F12B /* note2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note2.png; sourceTree = "<group>"; };
+		B31EA6FA1371031A00C9F12B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B3506A5912DD9614006F889E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		B3706CE812DD6457002889EF /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3706CEC12DD6457002889EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -65,6 +77,7 @@
 		B3706CDD12DD6457002889EF = {
 			isa = PBXGroup;
 			children = (
+				B31EA6FA1371031A00C9F12B /* Default.png */,
 				B3706CF212DD6457002889EF /* Reminder */,
 				B3706CEB12DD6457002889EF /* Frameworks */,
 				B3706CE912DD6457002889EF /* Products */,
@@ -109,6 +122,11 @@
 		B3706CF312DD6457002889EF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B31EA6EA1370C8EC00C9F12B /* note.png */,
+				B31EA6F81370DC2500C9F12B /* note2.png */,
+				B31EA6E21370AB4900C9F12B /* bg-texture.png */,
+				B31EA6DC13709F7700C9F12B /* button-highlight.png */,
+				B31EA6DD13709F7700C9F12B /* button.png */,
 				B3706CF412DD6457002889EF /* Reminder-Info.plist */,
 				B3706CF512DD6457002889EF /* InfoPlist.strings */,
 				B3706CF812DD6457002889EF /* EventApp-Prefix.pch */,
@@ -168,6 +186,12 @@
 				B3706D0012DD6457002889EF /* MainWindow.xib in Resources */,
 				B3706D0612DD6457002889EF /* EventAppViewController.xib in Resources */,
 				B3506A5A12DD9614006F889E /* MainWindow-iPad.xib in Resources */,
+				B31EA6DE13709F7700C9F12B /* button-highlight.png in Resources */,
+				B31EA6DF13709F7700C9F12B /* button.png in Resources */,
+				B31EA6E31370AB4900C9F12B /* bg-texture.png in Resources */,
+				B31EA6EB1370C8EC00C9F12B /* note.png in Resources */,
+				B31EA6F91370DC2500C9F12B /* note2.png in Resources */,
+				B31EA6FB1371031A00C9F12B /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +250,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sebastian Engel (R7626END4J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sebastian Engel (R7626END4J)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -233,6 +258,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				PROVISIONING_PROFILE = "0A6D5FD9-5636-426E-9365-BDBB5574D1DF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "60B4DFB2-7D03-4628-BBBB-1C27E2FDBF6C";
 				SDKROOT = iphoneos;
 			};
@@ -242,12 +268,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sebastian Engel (R7626END4J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sebastian Engel (R7626END4J)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "0A6D5FD9-5636-426E-9365-BDBB5574D1DF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "60B4DFB2-7D03-4628-BBBB-1C27E2FDBF6C";
 				SDKROOT = iphoneos;
 			};
@@ -257,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -264,6 +293,7 @@
 				INFOPLIST_FILE = "EventApp/Reminder-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Reminder;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -273,12 +303,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventApp/EventApp-Prefix.pch";
 				INFOPLIST_FILE = "EventApp/Reminder-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Reminder;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

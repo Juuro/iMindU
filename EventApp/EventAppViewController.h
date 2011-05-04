@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventAppViewController : UIViewController {
-@private
-    IBOutlet UITextField *titleField;
-    IBOutlet UITextField *timeField;
-    IBOutlet UISegmentedControl *segment;
-    IBOutlet UILabel *previewTitle;
-    IBOutlet UILabel *previewDate;
+@interface EventAppViewController : UIViewController <UITextFieldDelegate> {
+    UITextField *titleField;
+    UITextField *timeField;
+    UISegmentedControl *segment;
+    UILabel *previewTitle;
+    UILabel *previewDate;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *titleField;
@@ -23,5 +22,6 @@
 -(IBAction) newEvent;
 -(IBAction) timeChange;
 -(NSDate *) computeDate;
+//-(BOOL)textFieldShouldReturn:(UITextField *)titleField;
 
 @end

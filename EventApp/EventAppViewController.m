@@ -8,11 +8,50 @@
 
 #import "EventAppViewController.h"
 #import <EventKit/EventKit.h>
+#import <Foundation/Foundation.h>
 
 @implementation EventAppViewController
 
 @synthesize titleField;
 @synthesize timeField;
+
+
+
+
+- (BOOL)textField:(UITextField *)thetextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)text {
+    NSLog(@"Tut!");
+    if ([text length]>=1) {
+        if (thetextField == timeField) {
+            //NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+            NSLocale *l_en = [[NSLocale alloc] initWithLocaleIdentifier: @"en_US"];
+            //NSLocale *l_de = [[NSLocale alloc] initWithLocaleIdentifier: @"de_DE"];
+            NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+            [f setLocale: l_en];
+            
+            if([text isEqualToString:[f stringFromNumber:[f numberFromString: text]]]){
+                return YES;
+            }
+            else {
+                return NO;
+            }        
+        }
+        else {
+            NSLog(@"Krakrah");
+            return YES;
+        }
+    }
+    else {
+        return YES;
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == titleField) {
+        [titleField resignFirstResponder];
+        [timeField becomeFirstResponder];
+    }    
+    return YES;
+}
 
 -(IBAction) newEvent {
     EKEventStore *eventDB = [[EKEventStore alloc] init];    
@@ -83,6 +122,7 @@
 }
 
 - (IBAction) timeChange {
+    
     int myint = [timeField.text integerValue];  
     
     NSDate *dateTmp = [NSDate date];
@@ -175,16 +215,16 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
+//Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    [titleField becomeFirstResponder]; 
     [super viewDidLoad];
 }
-*/
 
 - (void)viewDidUnload
-{
+{       
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
