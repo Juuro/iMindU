@@ -103,7 +103,7 @@
          
         
         UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Alarm hinzugef�gt:"
+                              initWithTitle:@" Alarm hinzugefügt:"
                               message:alertText
                               delegate:nil
                               cancelButtonTitle:@"Okay"

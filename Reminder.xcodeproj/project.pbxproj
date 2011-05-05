@@ -24,6 +24,9 @@
 		B3706D0312DD6457002889EF /* EventAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3706D0212DD6457002889EF /* EventAppViewController.m */; };
 		B3706D0612DD6457002889EF /* EventAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3706D0412DD6457002889EF /* EventAppViewController.xib */; };
 		B3A66DFA12DD64AF00EE90EE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A66DF912DD64AF00EE90EE /* EventKit.framework */; };
+		B3FE03E913724B22000639EC /* bell-114.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FE03E813724B22000639EC /* bell-114.png */; };
+		B3FE03EB13724B27000639EC /* bell-57.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FE03EA13724B27000639EC /* bell-57.png */; };
+		B3FE03ED13724B2F000639EC /* bell-72.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FE03EC13724B2F000639EC /* bell-72.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,9 +49,12 @@
 		B3706CFC12DD6457002889EF /* EventAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventAppAppDelegate.m; sourceTree = "<group>"; };
 		B3706CFF12DD6457002889EF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		B3706D0112DD6457002889EF /* EventAppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventAppViewController.h; sourceTree = "<group>"; };
-		B3706D0212DD6457002889EF /* EventAppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventAppViewController.m; sourceTree = "<group>"; };
+		B3706D0212DD6457002889EF /* EventAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventAppViewController.m; sourceTree = "<group>"; };
 		B3706D0512DD6457002889EF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EventAppViewController.xib; sourceTree = "<group>"; };
 		B3A66DF912DD64AF00EE90EE /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		B3FE03E813724B22000639EC /* bell-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell-114.png"; sourceTree = "<group>"; };
+		B3FE03EA13724B27000639EC /* bell-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell-57.png"; sourceTree = "<group>"; };
+		B3FE03EC13724B2F000639EC /* bell-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell-72.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,9 @@
 		B3706CDD12DD6457002889EF = {
 			isa = PBXGroup;
 			children = (
+				B3FE03EC13724B2F000639EC /* bell-72.png */,
+				B3FE03EA13724B27000639EC /* bell-57.png */,
+				B3FE03E813724B22000639EC /* bell-114.png */,
 				B31EA6FA1371031A00C9F12B /* Default.png */,
 				B3706CF212DD6457002889EF /* Reminder */,
 				B3706CEB12DD6457002889EF /* Frameworks */,
@@ -192,6 +201,9 @@
 				B31EA6EB1370C8EC00C9F12B /* note.png in Resources */,
 				B31EA6F91370DC2500C9F12B /* note2.png in Resources */,
 				B31EA6FB1371031A00C9F12B /* Default.png in Resources */,
+				B3FE03E913724B22000639EC /* bell-114.png in Resources */,
+				B3FE03EB13724B27000639EC /* bell-57.png in Resources */,
+				B3FE03ED13724B2F000639EC /* bell-72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
