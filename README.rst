@@ -1,10 +1,6 @@
-Reminder.app is an App for the iPhone to set Alarms directly in the Calendar. If you have MobileMe or Google calendars, your alarms will appear on your Mac or PC, too.
-
-dropship - Dropbox API utilities
+Reminder.app
 ============================================================
 
-These utilities make use of the deduplication scheme of Dropbox__
-to allow for "teleporting" files into your Dropbox account
-given only a list of hashes, provided of course that the files already exist
-on their servers. This enables arbitrary, anonymous transfers of files between 
-Dropbox accounts.
+Reminder.app is an App for the iPhone to set Alarms directly in the Calendar. If you have MobileMe or Google calendars, your alarms will appear on your Mac or PC, too.
+
+You can set the alarm by enter a title and x minutes, hours or days in wich the alarm should come up. The app enters the alarm in the local calendar and your MobileMe, Google calendar or iTunes sync does the rest.
