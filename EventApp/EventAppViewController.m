@@ -219,7 +219,7 @@
 //Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
-    [titleField becomeFirstResponder]; 
+    //[titleField becomeFirstResponder]; 
     [super viewDidLoad];
 }
 

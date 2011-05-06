@@ -108,7 +108,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">note2.png</string>
+							<string key="NSResourceName">note.png</string>
 						</object>
 					</object>
 					<object class="IBUITextField" id="551253874">
@@ -728,13 +728,13 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>bg-texture.png</string>
 				<string>button.png</string>
-				<string>note2.png</string>
+				<string>note.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{320, 416}</string>
 				<string>{189, 55}</string>
-				<string>{325, 153}</string>
+				<string>{650, 306}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">301</string>
