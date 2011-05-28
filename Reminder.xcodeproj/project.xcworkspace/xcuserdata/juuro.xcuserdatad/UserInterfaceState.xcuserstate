@@ -3143,8 +3143,8 @@
 				</dict>
 			</array>
 		</dict>
-		<real>328020344.78887701</real>
-		<string>{390169, 990}</string>
+		<real>328020364.80804002</real>
+		<string>{387139, 958}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9835,7 +9835,7 @@
 		</dict>
 		<string>IDEDeviceLocation</string>
 		<string>IDEDeviceArchitecture</string>
-		<string>dvtdevice-iphonePlaceholder:placeholder</string>
+		<string>dvtdevice-iphone:243d9cc1766805cbef3438d3b7f067d367989961</string>
 		<string>armv7</string>
 		<dict>
 			<key>$class</key>

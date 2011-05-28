@@ -16,6 +16,7 @@
 			<string>IBProxyObject</string>
 			<string>IBUILabel</string>
 			<string>IBUIImageView</string>
+			<string>IBUIBarButtonItem</string>
 			<string>IBUITextField</string>
 			<string>IBUISegmentedControl</string>
 			<string>IBUINavigationBar</string>
@@ -283,6 +284,12 @@
 							<object class="IBUINavigationItem" id="957575406">
 								<reference key="IBUINavigationBar" ref="717850941"/>
 								<string key="IBUITitle">Reminder</string>
+								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="431129450">
+									<string key="IBUITitle">Settings</string>
+									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+									<int key="IBUIStyle">1</int>
+									<reference key="IBUINavigationItem" ref="957575406"/>
+								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</object>
@@ -552,6 +559,10 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">21</int>
 						<reference key="object" ref="957575406"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="431129450"/>
+						</object>
 						<reference key="parent" ref="717850941"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -574,6 +585,11 @@
 						<reference key="object" ref="889586058"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">49</int>
+						<reference key="object" ref="431129450"/>
+						<reference key="parent" ref="957575406"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -594,6 +610,7 @@
 					<string>33.IBPluginDependency</string>
 					<string>38.IBPluginDependency</string>
 					<string>39.IBPluginDependency</string>
+					<string>49.IBPluginDependency</string>
 					<string>6.IBEditorWindowLastContentRect</string>
 					<string>6.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
@@ -610,6 +627,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<integer value="1"/>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -635,7 +653,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">48</int>
+			<int key="maxID">49</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
