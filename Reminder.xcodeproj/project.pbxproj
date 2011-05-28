@@ -27,6 +27,8 @@
 		B3E35E9713734FFE0086CFAB /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E9313734FFE0086CFAB /* button@2x.png */; };
 		B3E35E9813734FFE0086CFAB /* button-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E9413734FFE0086CFAB /* button-highlight.png */; };
 		B3E35E9913734FFE0086CFAB /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E9513734FFE0086CFAB /* button.png */; };
+		B3EB2631138F146300480A26 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3EB2630138F146300480A26 /* SettingsViewController.xib */; };
+		B3EB2635138F150000480A26 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EB2634138F150000480A26 /* SettingsViewController.m */; };
 		B3FE03E913724B22000639EC /* bell-114.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FE03E813724B22000639EC /* bell-114.png */; };
 		B3FE03EB13724B27000639EC /* bell-57.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FE03EA13724B27000639EC /* bell-57.png */; };
 		B3FE03ED13724B2F000639EC /* bell-72.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FE03EC13724B2F000639EC /* bell-72.png */; };
@@ -58,6 +60,9 @@
 		B3E35E9313734FFE0086CFAB /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
 		B3E35E9413734FFE0086CFAB /* button-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-highlight.png"; sourceTree = "<group>"; };
 		B3E35E9513734FFE0086CFAB /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		B3EB2630138F146300480A26 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		B3EB2633138F150000480A26 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		B3EB2634138F150000480A26 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B3FE03E813724B22000639EC /* bell-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell-114.png"; sourceTree = "<group>"; };
 		B3FE03EA13724B27000639EC /* bell-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell-57.png"; sourceTree = "<group>"; };
 		B3FE03EC13724B2F000639EC /* bell-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell-72.png"; sourceTree = "<group>"; };
@@ -130,6 +135,9 @@
 				B3706D0112DD6457002889EF /* EventAppViewController.h */,
 				B3706D0212DD6457002889EF /* EventAppViewController.m */,
 				B3706D0412DD6457002889EF /* EventAppViewController.xib */,
+				B3EB2633138F150000480A26 /* SettingsViewController.h */,
+				B3EB2634138F150000480A26 /* SettingsViewController.m */,
+				B3EB2630138F146300480A26 /* SettingsViewController.xib */,
 				B3706CF312DD6457002889EF /* Supporting Files */,
 			);
 			name = Reminder;
@@ -216,6 +224,7 @@
 				B3E35E9713734FFE0086CFAB /* button@2x.png in Resources */,
 				B3E35E9813734FFE0086CFAB /* button-highlight.png in Resources */,
 				B3E35E9913734FFE0086CFAB /* button.png in Resources */,
+				B3EB2631138F146300480A26 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +238,7 @@
 				B3706CFA12DD6457002889EF /* main.m in Sources */,
 				B3706CFD12DD6457002889EF /* EventAppAppDelegate.m in Sources */,
 				B3706D0312DD6457002889EF /* EventAppViewController.m in Sources */,
+				B3EB2635138F150000480A26 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

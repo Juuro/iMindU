@@ -9,14 +9,35 @@
 #import "EventAppViewController.h"
 #import <EventKit/EventKit.h>
 #import <Foundation/Foundation.h>
+#import "SettingsViewController.h"
 
 @implementation EventAppViewController
 
 @synthesize titleField;
 @synthesize timeField;
+@synthesize settingsButton;
+@synthesize settingsViewController;
 
 
-
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        settingsViewController = [[SettingsViewController alloc] init];
+        
+        [self setTitle: @"Reminder"];
+        
+        //Configure rightBarButtonItem
+        self.navigationItem.rightBarButtonItem = 
+        [[[UIBarButtonItem alloc] 
+          initWithTitle:@"Settings"
+          style:UIBarButtonItemStyleBordered
+          target:self
+          action: @selector(pushSettings:)] 
+         autorelease];
+    }
+    return self;
+}
 
 - (BOOL)textField:(UITextField *)thetextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)text {
     NSLog(@"Tut!");
@@ -51,6 +72,14 @@
         [timeField becomeFirstResponder];
     }    
     return YES;
+}
+
+-(IBAction)pushSettings:(id)sender {
+    [self.navigationController pushViewController:settingsViewController animated:YES];
+    
+    NSLog(@"%@",self.navigationController);
+    
+    NSLog(@"Moep!");
 }
 
 -(IBAction) newEvent {
@@ -180,15 +209,6 @@
     return dateTmp;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)dealloc
 {
     [super dealloc];
@@ -219,7 +239,7 @@
 //Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
-    //[titleField becomeFirstResponder]; 
+    //settingsViewController = [[SettingsViewController alloc] init]; 
     [super viewDidLoad];
 }
 

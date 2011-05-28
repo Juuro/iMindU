@@ -12,6 +12,10 @@
 
 @interface EventAppAppDelegate : NSObject <UIApplicationDelegate> {
 @private
+    
+	IBOutlet UINavigationController *navigationController;
+    
+    EventAppViewController *eventAppViewController;
 
 }
 

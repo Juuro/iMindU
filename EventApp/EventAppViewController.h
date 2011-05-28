@@ -8,20 +8,29 @@
 
 #import <UIKit/UIKit.h>
 
+@class SettingsViewController;
+
 @interface EventAppViewController : UIViewController <UITextFieldDelegate> {
     UITextField *titleField;
     UITextField *timeField;
     UISegmentedControl *segment;
     UILabel *previewTitle;
     UILabel *previewDate;
+    UIBarButtonItem *settingsButton;
+    
+    SettingsViewController *settingsViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *titleField;
 @property (nonatomic, retain) IBOutlet UITextField *timeField;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *settingsButton;
+@property (nonatomic, retain) SettingsViewController *settingsViewController;
 
 -(IBAction) newEvent;
 -(IBAction) timeChange;
 -(NSDate *) computeDate;
 //-(BOOL)textFieldShouldReturn:(UITextField *)titleField;
+
+-(IBAction) pushSettings:(id)sender;
 
 @end
