@@ -45,10 +45,11 @@
             //NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
             NSLocale *l_en = [[NSLocale alloc] initWithLocaleIdentifier: @"en_US"];
             //NSLocale *l_de = [[NSLocale alloc] initWithLocaleIdentifier: @"de_DE"];
-            NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-            [f setLocale: l_en];
+            formatter = [[NSNumberFormatter alloc] init];
+            [formatter setLocale: l_en];
+            [l_en release];
             
-            if([text isEqualToString:[f stringFromNumber:[f numberFromString: text]]]){
+            if([text isEqualToString:[formatter stringFromNumber:[formatter numberFromString: text]]]){
                 return YES;
             }
             else {
@@ -77,11 +78,11 @@
 }
 
 -(IBAction) newEvent {
-    EKEventStore *eventDB = [[EKEventStore alloc] init];    
-    EKEvent *myEvent = [EKEvent eventWithEventStore:eventDB];    
-    EKAlarm *myAlarm = [EKAlarm alarmWithRelativeOffset:0];    
+    eventDB = [[EKEventStore alloc] init];    
+    myEvent = [EKEvent eventWithEventStore:eventDB];    
+    myAlarm = [EKAlarm alarmWithRelativeOffset:0];    
     
-    NSDate *dateTmp = [NSDate date];
+    dateTmp = [NSDate date];
     
     int myint = [timeField.text integerValue];  
     
@@ -148,7 +149,7 @@
     
     int myint = [timeField.text integerValue];  
     
-    NSDate *dateTmp = [NSDate date];
+    dateTmp = [NSDate date];
     
     NSTimeInterval delta;
     if(segment.selectedSegmentIndex == 0){ 
@@ -185,7 +186,7 @@
 
 - (NSDate *) computeDate {
     int myint = [timeField.text integerValue];
-    NSDate *dateTmp = [NSDate date];
+    dateTmp = [NSDate date];
     
     NSTimeInterval delta;
     if(segment.selectedSegmentIndex == 0){ 
@@ -206,8 +207,12 @@
 - (void)dealloc
 {
     [super dealloc];
-    [EKEvent release];
-    [EKAlarm release];
+    [dateTmp release];
+    [myAlarm release];
+    [myEvent release];
+    [eventDB release];
+    [formatter release];
+    
     [titleField release];
     [timeField release];
 }

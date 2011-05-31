@@ -30,7 +30,16 @@
 //}
 
 - (void)dealloc
-{
+{    
+    [ud release];
+    ud = nil;
+    
+    [datePickerSwitch release];
+    datePickerSwitch = nil;
+    
+    [keyboardAtStartSwitch release];
+    keyboardAtStartSwitch = nil;
+    
     [super dealloc];
 }
 
@@ -67,15 +76,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    
-    [ud release];
-    ud = nil;
-    
-    [datePickerSwitch release];
-    datePickerSwitch = nil;
-    
-    [keyboardAtStartSwitch release];
-    keyboardAtStartSwitch = nil;
     
     [self release];
     self = nil;
