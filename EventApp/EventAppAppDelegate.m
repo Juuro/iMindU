@@ -19,9 +19,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    
-    
     
     self.window.rootViewController = self.viewController;
     
@@ -59,4 +56,22 @@
     [super dealloc];
 }
 
++ (void)initialize
+{
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSString *pListPath = [path stringByAppendingPathComponent:@"Settings.bundle/Root.plist"];
+    
+    NSDictionary *pList = [NSDictionary dictionaryWithContentsOfFile:pListPath];
+	
+    NSMutableArray *prefsArray = [pList objectForKey:@"PreferenceSpecifiers"];
+    NSMutableDictionary *regDictionary = [NSMutableDictionary dictionary];
+    for (NSDictionary *dict in prefsArray) {
+        NSString *key = [dict objectForKey:@"Key"];
+        if (key) {
+            id value = [dict objectForKey:@"DefaultValue"];
+            [regDictionary setObject:value forKey:key];
+        }
+    }
+    [[NSUserDefaults standardUserDefaults] registerDefaults:regDictionary];
+}
 @end

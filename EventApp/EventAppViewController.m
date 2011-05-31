@@ -20,7 +20,7 @@
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+{    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         settingsViewController = [[SettingsViewController alloc] init];
@@ -40,7 +40,6 @@
 }
 
 - (BOOL)textField:(UITextField *)thetextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)text {
-    NSLog(@"Tut!");
     if ([text length]>=1) {
         if (thetextField == timeField) {
             //NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -57,7 +56,6 @@
             }        
         }
         else {
-            NSLog(@"Krakrah");
             return YES;
         }
     }
@@ -76,10 +74,6 @@
 
 -(IBAction)pushSettings:(id)sender {
     [self.navigationController pushViewController:settingsViewController animated:YES];
-    
-    NSLog(@"%@",self.navigationController);
-    
-    NSLog(@"Moep!");
 }
 
 -(IBAction) newEvent {
@@ -239,6 +233,7 @@
 //Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    [titleField becomeFirstResponder];
     //settingsViewController = [[SettingsViewController alloc] init]; 
     [super viewDidLoad];
 }
