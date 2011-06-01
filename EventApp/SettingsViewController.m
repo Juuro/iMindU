@@ -30,7 +30,16 @@
 //}
 
 - (void)dealloc
-{
+{    
+    [ud release];
+    ud = nil;
+    
+    [datePickerSwitch release];
+    datePickerSwitch = nil;
+    
+    [keyboardAtStartSwitch release];
+    keyboardAtStartSwitch = nil;
+    
     [super dealloc];
 }
 
@@ -46,6 +55,15 @@
 
 - (void)viewDidLoad
 {
+    
+    // Get the shared instance of NSUserDefaults
+    ud = [NSUserDefaults standardUserDefaults];
+    
+    datePickerSwitch = [[UISwitch alloc] init];
+    keyboardAtStartSwitch = [[UISwitch alloc] init];
+    
+    NSLog(@"%@",ud);
+    
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -58,17 +76,36 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    
+    [self release];
+    self = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    value = [ud boolForKey:@"datePickerPrefKey"];
+    if(value){
+        [datePickerSwitch setOn:YES];
+    }
+    else {
+        [datePickerSwitch setOn:NO];
+    }
+    
+    value = [ud boolForKey:@"keyboardPrefKey"];    
+    if(value){
+        [keyboardAtStartSwitch setOn:YES];
+    }
+    else {
+        [keyboardAtStartSwitch setOn:NO];
+    }
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
     [super viewDidAppear:animated];
 }
 
@@ -101,7 +138,7 @@
 {
     switch (section) {
 		case 0:
-			return 3;
+			return 4;
             
 		case 1:
 			return 1;
@@ -127,13 +164,24 @@
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = @"Alarmton";
+                cell.textLabel.text = @"Alarmsignal";
                 break;
             case 1:
-                cell.textLabel.text = @"Kalender";
+                cell.textLabel.text = @"Calendar";
                 break;
             case 2:
-                cell.textLabel.text = @"Wählrad";
+                cell.textLabel.text = @"Datepicker";
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                               
+				[datePickerSwitch addTarget:self action:@selector(toggleDatePicker:) forControlEvents:UIControlEventValueChanged];
+				cell.accessoryView = datePickerSwitch;
+                break;
+            case 3:
+                cell.textLabel.text = @"Keyboard on launch";
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                
+				[keyboardAtStartSwitch addTarget:self action:@selector(toggleKeyboardAtStart:) forControlEvents:UIControlEventValueChanged];
+				cell.accessoryView = keyboardAtStartSwitch;
                 break;
             default:
                 break;
@@ -151,6 +199,26 @@
     }
     
     return cell;
+}
+
+- (void)toggleDatePicker:(UISwitch *)sender { 
+    if(!datePickerSwitch.on){
+        [ud setBool:NO forKey:@"datePickerPrefKey"];
+        NSLog(@"Set datePickerSwitch to OFF.");
+    }
+    else {
+        [ud setBool:YES forKey:@"datePickerPrefKey"];
+        NSLog(@"Set datePickerSwitch to 1.");
+    }
+}
+
+- (void)toggleKeyboardAtStart:(UISwitch *)sender {
+    if(!keyboardAtStartSwitch.on){
+        [ud setBool:NO forKey:@"keyboardPrefKey"];
+    }
+    else {
+        [ud setBool:YES forKey:@"keyboardPrefKey"];
+    }
 }
 
 /*

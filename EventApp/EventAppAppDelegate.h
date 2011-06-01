@@ -23,4 +23,6 @@
 
 @property (nonatomic, retain) IBOutlet EventAppViewController *viewController;
 
++ (void)initialize;
+
 @end

@@ -70,7 +70,6 @@
 						<string key="NSFrame">{{66, 148}, {189, 55}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -320,7 +319,6 @@
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MC43NQA</bytes>
@@ -479,7 +477,6 @@
 						<reference key="object" ref="774585933"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="551253874"/>
 							<reference ref="676486454"/>
 							<reference ref="108738112"/>
 							<reference ref="545510211"/>
@@ -489,6 +486,7 @@
 							<reference ref="559846736"/>
 							<reference ref="602042807"/>
 							<reference ref="889586058"/>
+							<reference ref="551253874"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -612,7 +610,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>newEvent</string>
-							<string>pushSettings</string>
+							<string>pushSettings:</string>
 							<string>timeChange</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -627,7 +625,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>newEvent</string>
-							<string>pushSettings</string>
+							<string>pushSettings:</string>
 							<string>timeChange</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -637,7 +635,7 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">pushSettings</string>
+								<string key="name">pushSettings:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EventKit/EventKit.h>
 
 @class SettingsViewController;
 
@@ -17,6 +18,13 @@
     UILabel *previewTitle;
     UILabel *previewDate;
     UIBarButtonItem *settingsButton;
+    
+    EKEventStore *eventDB;
+    EKEvent *myEvent;
+    EKAlarm *myAlarm;
+    NSDate *dateTmp;
+    
+    NSNumberFormatter *formatter;
     
     SettingsViewController *settingsViewController;
 }

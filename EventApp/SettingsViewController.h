@@ -11,6 +11,12 @@
 
 @interface SettingsViewController : UITableViewController {
     
+    UISwitch *keyboardAtStartSwitch;
+    UISwitch *datePickerSwitch;
+    
+    NSUserDefaults *ud;
+    
+    BOOL value;
 }
 
 @end
