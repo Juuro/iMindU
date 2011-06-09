@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class CalendarPickerViewController;
+@class AlarmSignalPickerViewController;
 
 @interface SettingsViewController : UITableViewController {
     
@@ -17,6 +19,13 @@
     NSUserDefaults *ud;
     
     BOOL value;
+    
+    CalendarPickerViewController *calendarPickerViewController;
+    AlarmSignalPickerViewController *alarmsignalPickerViewController;
 }
+
+
+@property (nonatomic, retain) CalendarPickerViewController *calendarPickerViewController;
+@property (nonatomic, retain) AlarmSignalPickerViewController *alarmsignalPickerViewController;
 
 @end

@@ -7,15 +7,23 @@
 //
 
 #import "SettingsViewController.h"
+#import "CalendarPickerViewController.h"
+#import "AlarmSignalPickerViewController.h"
 
 
 @implementation SettingsViewController
+
+@synthesize calendarPickerViewController;
+@synthesize alarmsignalPickerViewController;
 
 - (id)init
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         [self setTitle: @"Settings"];
+        
+        calendarPickerViewController = [[CalendarPickerViewController alloc] init];
+        alarmsignalPickerViewController = [[AlarmSignalPickerViewController alloc] init];
     }
     return self;
 }
@@ -61,8 +69,6 @@
     
     datePickerSwitch = [[UISwitch alloc] init];
     keyboardAtStartSwitch = [[UISwitch alloc] init];
-    
-    NSLog(@"%@",ud);
     
     [super viewDidLoad];
 
@@ -158,16 +164,22 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
     
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
                 cell.textLabel.text = @"Alarmsignal";
+                cell.detailTextLabel.text = @"Ringelingeling";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                
                 break;
             case 1:
                 cell.textLabel.text = @"Calendar";
+                cell.detailTextLabel.text = @"Käsebrot";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                
                 break;
             case 2:
                 cell.textLabel.text = @"Datepicker";
@@ -191,6 +203,7 @@
         switch (indexPath.row) {
             case 0:
                 cell.textLabel.text = @"About";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 break;
                 
             default:
@@ -204,11 +217,9 @@
 - (void)toggleDatePicker:(UISwitch *)sender { 
     if(!datePickerSwitch.on){
         [ud setBool:NO forKey:@"datePickerPrefKey"];
-        NSLog(@"Set datePickerSwitch to OFF.");
     }
     else {
         [ud setBool:YES forKey:@"datePickerPrefKey"];
-        NSLog(@"Set datePickerSwitch to 1.");
     }
 }
 
@@ -264,6 +275,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if(indexPath.row == 0){
+        [self.navigationController pushViewController:alarmsignalPickerViewController animated:YES];
+        
+    }
+    else if(indexPath.row == 1){
+        [self.navigationController pushViewController:calendarPickerViewController animated:YES];
+    }
+    else {
+    
+    }
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

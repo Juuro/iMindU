@@ -19,6 +19,8 @@
 		B3706D0312DD6457002889EF /* EventAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3706D0212DD6457002889EF /* EventAppViewController.m */; };
 		B3706D0612DD6457002889EF /* EventAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3706D0412DD6457002889EF /* EventAppViewController.xib */; };
 		B3A66DFA12DD64AF00EE90EE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A66DF912DD64AF00EE90EE /* EventKit.framework */; };
+		B3AB3C7F13A0461F00D47F3E /* CalendarPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AB3C7E13A0461F00D47F3E /* CalendarPickerViewController.m */; };
+		B3AB3C8313A0471400D47F3E /* AlarmSignalPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AB3C8213A0471400D47F3E /* AlarmSignalPickerViewController.m */; };
 		B3E35E6E13732F130086CFAB /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E6D13732F130086CFAB /* Entitlements.plist */; };
 		B3E35E721373412B0086CFAB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E711373412B0086CFAB /* Default@2x.png */; };
 		B3E35E8813734D670086CFAB /* bg-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E8A13734D670086CFAB /* bg-texture.png */; };
@@ -53,6 +55,10 @@
 		B3706D0212DD6457002889EF /* EventAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventAppViewController.m; sourceTree = "<group>"; };
 		B3706D0512DD6457002889EF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EventAppViewController.xib; sourceTree = "<group>"; };
 		B3A66DF912DD64AF00EE90EE /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		B3AB3C7D13A0461F00D47F3E /* CalendarPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPickerViewController.h; sourceTree = "<group>"; };
+		B3AB3C7E13A0461F00D47F3E /* CalendarPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPickerViewController.m; sourceTree = "<group>"; };
+		B3AB3C8113A0471400D47F3E /* AlarmSignalPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmSignalPickerViewController.h; sourceTree = "<group>"; };
+		B3AB3C8213A0471400D47F3E /* AlarmSignalPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmSignalPickerViewController.m; sourceTree = "<group>"; };
 		B3E35E6D13732F130086CFAB /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		B3E35E711373412B0086CFAB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B3E35E8913734D670086CFAB /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/bg-texture.png"; sourceTree = "<group>"; };
@@ -139,6 +145,10 @@
 				B3706D0412DD6457002889EF /* EventAppViewController.xib */,
 				B3EB2633138F150000480A26 /* SettingsViewController.h */,
 				B3EB2634138F150000480A26 /* SettingsViewController.m */,
+				B3AB3C8113A0471400D47F3E /* AlarmSignalPickerViewController.h */,
+				B3AB3C8213A0471400D47F3E /* AlarmSignalPickerViewController.m */,
+				B3AB3C7D13A0461F00D47F3E /* CalendarPickerViewController.h */,
+				B3AB3C7E13A0461F00D47F3E /* CalendarPickerViewController.m */,
 				B34C98AC1393D92000133198 /* Settings.bundle */,
 				B3EB2630138F146300480A26 /* SettingsViewController.xib */,
 				B3706CF312DD6457002889EF /* Supporting Files */,
@@ -189,6 +199,9 @@
 /* Begin PBXProject section */
 		B3706CDF12DD6457002889EF /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = B3706CE212DD6457002889EF /* Build configuration list for PBXProject "Reminder" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -243,6 +256,8 @@
 				B3706CFD12DD6457002889EF /* EventAppAppDelegate.m in Sources */,
 				B3706D0312DD6457002889EF /* EventAppViewController.m in Sources */,
 				B3EB2635138F150000480A26 /* SettingsViewController.m in Sources */,
+				B3AB3C7F13A0461F00D47F3E /* CalendarPickerViewController.m in Sources */,
+				B3AB3C8313A0471400D47F3E /* AlarmSignalPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,11 +311,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -314,9 +330,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -368,9 +385,10 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]" = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;

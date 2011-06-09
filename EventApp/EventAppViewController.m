@@ -141,7 +141,7 @@
     [timeField setText:@""];
     
     
-    //[myEvent release];
+    [myEvent release];
     [eventDB release];    
 }
 
