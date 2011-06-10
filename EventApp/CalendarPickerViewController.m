@@ -54,8 +54,10 @@
 }
 
 - (void)getCalendarTitles {
-    counter = 0;
     
+    calendars = [[NSMutableArray alloc] init];
+    
+    counter = 0;    
     eventDB = [[EKEventStore alloc] init]; 
     
     for (EKCalendar *thisCalendar in eventDB.calendars){
@@ -64,8 +66,13 @@
             [calendars addObject:thisCalendar.title];
         }
     }
-    NSLog(@"%@",self.tableView.visibleCells);
+    NSLog(@"tableView: %@",self.tableView.visibleCells);
+    
+    [eventDB release];
+    eventDB = nil;
     [self.tableView reloadData];
+    [self.tableView setNeedsDisplay];
+    // TODO: Kalenderliste wird aktualiesiert wenn View aktiv ist.
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -87,6 +94,9 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    
+    [calendars release];
+    calendars = nil;
     [super viewDidDisappear:animated];
 }
 
@@ -118,6 +128,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"cellForRowAtIndexPath");
+    
     static NSString *CellIdentifier = @"Cell";    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     

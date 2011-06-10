@@ -26,6 +26,9 @@
     
     NSNumberFormatter *formatter;
     
+    NSUserDefaults *ud;
+    BOOL value;
+    
     SettingsViewController *settingsViewController;
 }
 

@@ -45,9 +45,23 @@
     
 }
 
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    NSLog(@"applicationDidBecomeActive");
+    
+}
+
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     
-    [[navigationController topViewController].view setNeedsDisplay];
+    if([[navigationController topViewController] isKindOfClass:[UITableViewController class]]){
+        UITableViewController *lala = [[UITableViewController alloc] init];
+        [lala.tableView reloadData];
+        NSLog(@"Test %@", lala.tableView);
+    }
+    
+//    if( [[navigationController topViewController].view respondsToSelector:@selector(reloadData)] )  { 
+//        NSLog(@"Lala");
+//        [[navigationController topViewController].view reloadData];
+//    }
     NSLog(@"pee");
 }
 

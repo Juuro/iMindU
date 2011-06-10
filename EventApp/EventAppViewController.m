@@ -238,7 +238,17 @@
 //Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
-    [titleField becomeFirstResponder];
+    ud = [NSUserDefaults standardUserDefaults];
+    
+    value = [ud boolForKey:@"keyboardPrefKey"];    
+    if(value){
+        [titleField becomeFirstResponder];        
+    }
+    else {
+        
+    }
+    
+    
     //settingsViewController = [[SettingsViewController alloc] init]; 
     [super viewDidLoad];
 }
