@@ -32,6 +32,9 @@
     SettingsViewController *settingsViewController;
 }
 
+@property (nonatomic, retain) IBOutlet UILabel *previewTitle;
+@property (nonatomic, retain) IBOutlet UILabel *previewDate;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *segment;
 @property (nonatomic, retain) IBOutlet UITextField *titleField;
 @property (nonatomic, retain) IBOutlet UITextField *timeField;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *settingsButton;

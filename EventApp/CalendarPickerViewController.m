@@ -24,6 +24,18 @@
     return self;
 }
 
+- (void)dealloc
+{    
+    [ud release];
+    ud = nil;
+    [calendars release];
+    calendars = nil;
+    [value release];
+    value = nil;
+    
+    [super dealloc];
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -36,6 +48,9 @@
 
 - (void)viewDidLoad
 {
+    
+    // Get the shared instance of NSUserDefaults
+    ud = [NSUserDefaults standardUserDefaults];
     
     [super viewDidLoad];
 
@@ -66,7 +81,6 @@
             [calendars addObject:thisCalendar.title];
         }
     }
-    NSLog(@"tableView: %@",self.tableView.visibleCells);
     
     [eventDB release];
     eventDB = nil;
@@ -128,7 +142,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"cellForRowAtIndexPath");
     
     static NSString *CellIdentifier = @"Cell";    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -139,7 +152,7 @@
     
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
            
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [calendars objectAtIndex:indexPath.row]];
@@ -190,14 +203,32 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
     /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    value = [ud stringForKey:@"selectedCalendar"];
+    
+    NSLog(@"%@",value);
+    
+    for (NSInteger i=0; i<[tableView numberOfRowsInSection:0]; i++) {
+        NSIndexPath *ip = [NSIndexPath indexPathForRow:i inSection:0];
+        
+        [tableView deselectRowAtIndexPath:ip animated:YES];
+        UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:ip];
+        oldCell.accessoryType = UITableViewCellAccessoryNone;
+        oldCell.selectionStyle = UITableViewCellSelectionStyleBlue; 
+    }
+    
+    [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    
+    UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    EKCalendar *thisCalendar = [calendars objectAtIndex:indexPath.row];
+    NSLog(@"%@", thisCalendar);
+    
+    [ud setObject:thisCalendar forKey:@"selectedCalendar"];
+    
+    newCell.accessoryType = UITableViewCellAccessoryCheckmark;
+    newCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    */
 }
 
 @end

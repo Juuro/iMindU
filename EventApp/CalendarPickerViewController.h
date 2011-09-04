@@ -13,6 +13,9 @@
     EKEventStore *eventDB;
     NSUInteger counter;
     NSMutableArray *calendars;
+    
+    NSUserDefaults *ud;    
+    NSString *value;
 }
 
 @end

@@ -52,17 +52,17 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     
-    if([[navigationController topViewController] isKindOfClass:[UITableViewController class]]){
-        UITableViewController *lala = [[UITableViewController alloc] init];
-        [lala.tableView reloadData];
-        NSLog(@"Test %@", lala.tableView);
-    }
-    
-//    if( [[navigationController topViewController].view respondsToSelector:@selector(reloadData)] )  { 
-//        NSLog(@"Lala");
-//        [[navigationController topViewController].view reloadData];
+//    if([[navigationController topViewController] isKindOfClass:[UITableViewController class]]){
+//        UITableViewController *lala = [[UITableViewController alloc] init];
+//        [lala.tableView reloadData];
+//        NSLog(@"Test %@", lala.tableView);
 //    }
-    NSLog(@"pee");
+//    
+////    if( [[navigationController topViewController].view respondsToSelector:@selector(reloadData)] )  { 
+////        NSLog(@"Lala");
+////        [[navigationController topViewController].view reloadData];
+////    }
+//    NSLog(@"pee");
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

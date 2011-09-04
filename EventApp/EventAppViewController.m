@@ -17,6 +17,9 @@
 @synthesize timeField;
 @synthesize settingsButton;
 @synthesize settingsViewController;
+@synthesize previewDate;
+@synthesize previewTitle;
+@synthesize segment;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -103,7 +106,7 @@
     myEvent.title = titleField.text;
     myEvent.startDate = dateTmp;
     myEvent.endDate = dateTmp;
-    myEvent.alarms = [[NSArray alloc] initWithObjects: myAlarm, nil];
+    myEvent.alarms = [[[NSArray alloc] initWithObjects: myAlarm, nil] autorelease];
      
     [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
     
@@ -141,8 +144,12 @@
     [timeField setText:@""];
     
     
+    myEvent = nil;
     [myEvent release];
+    eventDB = nil;
     [eventDB release];    
+    
+    
 }
 
 - (IBAction) timeChange {
@@ -172,7 +179,7 @@
     [formatterTime setDateFormat:@"HH:mm"];
     [formatterDate setDateFormat:@"dd.MM.yyyy"];
     
-    //TODO: dateTemp durch computeDate ersetzen
+    //TODO: dateTmp durch computeDate ersetzen
     NSString *alertTime = [formatterTime stringFromDate:dateTmp];
     NSString *alertDate = [formatterDate stringFromDate:dateTmp];
     
@@ -206,7 +213,6 @@
 
 - (void)dealloc
 {
-    [super dealloc];
     [dateTmp release];
     [myAlarm release];
     [myEvent release];
@@ -215,6 +221,7 @@
     
     [titleField release];
     [timeField release];
+    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
