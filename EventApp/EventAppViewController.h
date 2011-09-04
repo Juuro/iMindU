@@ -22,7 +22,6 @@
     EKEventStore *eventDB;
     EKEvent *myEvent;
     EKAlarm *myAlarm;
-    NSDate *dateTmp;
     
     NSNumberFormatter *formatter;
     

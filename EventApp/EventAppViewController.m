@@ -81,39 +81,20 @@
 }
 
 -(IBAction) newEvent {
-    eventDB = [[EKEventStore alloc] init];    
+    eventDB = [[[EKEventStore alloc] init] autorelease];    
     myEvent = [EKEvent eventWithEventStore:eventDB];    
     myAlarm = [EKAlarm alarmWithRelativeOffset:0];    
     
-    dateTmp = [NSDate date];
-    
-    int myint = [timeField.text integerValue];  
-    
-    
-    NSTimeInterval delta;
-    if(segment.selectedSegmentIndex == 0){ 
-        delta = 60  * myint;
-    }
-    else if (segment.selectedSegmentIndex == 1){
-        delta = 60 * 60 * myint;
-    }
-    else {
-        delta = 60 * 60 * 24 * myint;
-    } 
-
-    dateTmp = [dateTmp dateByAddingTimeInterval:delta];
-    
     myEvent.title = titleField.text;
-    myEvent.startDate = dateTmp;
-    myEvent.endDate = dateTmp;
+    myEvent.startDate = [self computeDate];
+    myEvent.endDate = [self computeDate];
     myEvent.alarms = [[[NSArray alloc] initWithObjects: myAlarm, nil] autorelease];
      
     [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
     
     NSError *err;
     
-    [eventDB saveEvent:myEvent span:EKSpanThisEvent error:&err];
-    
+    [eventDB saveEvent:myEvent span:EKSpanThisEvent error:&err];    
     
     if (err == noErr) {
         NSDateFormatter* formatterTime = [[[NSDateFormatter alloc] init] autorelease];
@@ -122,9 +103,8 @@
         [formatterTime setDateFormat:@"HH:mm"];
         [formatterDate setDateFormat:@"dd.MM.yyyy"];
         
-        //TODO: dateTemp durch computeDate ersetzen
-        NSString *alertTime = [formatterTime stringFromDate:dateTmp];
-        NSString *alertDate = [formatterDate stringFromDate:dateTmp];
+        NSString *alertTime = [formatterTime stringFromDate:[self computeDate]];
+        NSString *alertDate = [formatterDate stringFromDate:[self computeDate]];
         
         NSString *alertText = [NSString stringWithFormat:@"%@\n%@ Uhr %@", titleField.text, alertTime, alertDate];
          
@@ -139,81 +119,58 @@
         [alert release];
     }
     
-    
     [titleField setText:@""];
     [timeField setText:@""];
-    
     
     myEvent = nil;
     [myEvent release];
     eventDB = nil;
-    [eventDB release];    
-    
-    
+    [eventDB release];
 }
 
-- (IBAction) timeChange {
-    
-    int myint = [timeField.text integerValue];  
-    
-    dateTmp = [NSDate date];
-    
-    NSTimeInterval delta;
-    if(segment.selectedSegmentIndex == 0){ 
-        delta = 60  * myint;
-    }
-    else if (segment.selectedSegmentIndex == 1){
-        delta = 60 * 60 * myint;
-    }
-    else {
-        delta = 60 * 60 * 24 * myint;
-    }
-    
-    dateTmp = [dateTmp dateByAddingTimeInterval:delta];
-    
-    
-    
+- (IBAction) timeChange {    
     NSDateFormatter* formatterTime = [[[NSDateFormatter alloc] init] autorelease];
     NSDateFormatter* formatterDate = [[[NSDateFormatter alloc] init] autorelease];
         
     [formatterTime setDateFormat:@"HH:mm"];
     [formatterDate setDateFormat:@"dd.MM.yyyy"];
     
-    //TODO: dateTmp durch computeDate ersetzen
-    NSString *alertTime = [formatterTime stringFromDate:dateTmp];
-    NSString *alertDate = [formatterDate stringFromDate:dateTmp];
+    NSString *alertTime = [formatterTime stringFromDate:[self computeDate]];
+    NSString *alertDate = [formatterDate stringFromDate:[self computeDate]];
     
     NSString *titleText = [NSString stringWithFormat:@"%@", titleField.text];
     NSString *dateText = [NSString stringWithFormat:@"%@ Uhr %@", alertTime, alertDate];
         
-           
     [previewTitle setText:titleText];
     [previewDate setText:dateText];
 }
 
 - (NSDate *) computeDate {
     int myint = [timeField.text integerValue];
-    dateTmp = [NSDate date];
+    
+    NSDate *dateTmp =[[[NSDate alloc] init] autorelease];
     
     NSTimeInterval delta;
     if(segment.selectedSegmentIndex == 0){ 
+        //minutes
         delta = 60  * myint;
     }
     else if (segment.selectedSegmentIndex == 1){
+        //hours
         delta = 60 * 60 * myint;
     }
     else {
+        //days
         delta = 60 * 60 * 24 * myint;
     }
     
-    dateTmp = [dateTmp dateByAddingTimeInterval:delta];
+    dateTmp = [dateTmp dateByAddingTimeInterval:delta];    
     
     return dateTmp;
 }
 
 - (void)dealloc
 {
-    [dateTmp release];
     [myAlarm release];
     [myEvent release];
     [eventDB release];
