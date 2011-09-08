@@ -18,4 +18,6 @@
     NSString *value;
 }
 
+-(UIImage *)imageWithColor:(UIColor *)color;
+
 @end

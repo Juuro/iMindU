@@ -30,6 +30,8 @@
         
         [self setTitle: @"Reminder"];
         
+        //self.segment;
+        
         //Configure rightBarButtonItem
         self.navigationItem.rightBarButtonItem = 
         [[[UIBarButtonItem alloc] 
@@ -40,6 +42,31 @@
          autorelease];
     }
     return self;
+}
+
+//Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad
+{
+    ud = [NSUserDefaults standardUserDefaults];
+    
+    value = [ud boolForKey:@"keyboardPrefKey"];    
+    if(value){
+        [titleField becomeFirstResponder];        
+    }
+    else {
+        
+    }
+    
+    // If no calendar is already set, set the defaultCalendarForNewEvents.
+    if ([ud stringForKey:@"selectedCalendar"] == nil){
+        eventDB = [[[EKEventStore alloc] init] autorelease];
+        EKCalendar *defaultCalendar =  [eventDB defaultCalendarForNewEvents];
+        [ud setObject:defaultCalendar.calendarIdentifier forKey:@"selectedCalendar"];
+        eventDB = nil;
+        [eventDB release];
+    }
+     
+    [super viewDidLoad];
 }
 
 - (BOOL)textField:(UITextField *)thetextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)text {
@@ -80,8 +107,8 @@
     [self.navigationController pushViewController:settingsViewController animated:YES];
 }
 
--(IBAction) newEvent {
-    eventDB = [[[EKEventStore alloc] init] autorelease];    
+-(IBAction) newEvent {    
+    eventDB = [[[EKEventStore alloc] init] autorelease];
     myEvent = [EKEvent eventWithEventStore:eventDB];    
     myAlarm = [EKAlarm alarmWithRelativeOffset:0];    
     
@@ -90,7 +117,7 @@
     myEvent.endDate = [self computeDate];
     myEvent.alarms = [[[NSArray alloc] initWithObjects: myAlarm, nil] autorelease];
      
-    [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
+    [myEvent setCalendar:[eventDB calendarWithIdentifier:[ud stringForKey:@"selectedCalendar"]]];
     
     NSError *err;
     
@@ -197,25 +224,6 @@
 {
 }
 */
-
-
-//Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    ud = [NSUserDefaults standardUserDefaults];
-    
-    value = [ud boolForKey:@"keyboardPrefKey"];    
-    if(value){
-        [titleField becomeFirstResponder];        
-    }
-    else {
-        
-    }
-    
-    
-    //settingsViewController = [[SettingsViewController alloc] init]; 
-    [super viewDidLoad];
-}
 
 - (void)viewDidUnload
 {       

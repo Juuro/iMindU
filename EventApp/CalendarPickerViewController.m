@@ -17,7 +17,7 @@
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         
-        calendars = [[NSMutableArray alloc] init];
+        //calendars = [[NSMutableArray alloc] init];
         
         
     }
@@ -76,14 +76,15 @@
     eventDB = [[EKEventStore alloc] init]; 
     
     for (EKCalendar *thisCalendar in eventDB.calendars){
-        if (thisCalendar.allowsContentModifications != NO){
+        if (thisCalendar.allowsContentModifications == YES){
             counter++;
-            [calendars addObject:thisCalendar.title];
+            [calendars addObject:thisCalendar.calendarIdentifier];
         }
     }
     
     [eventDB release];
     eventDB = nil;
+    
     [self.tableView reloadData];
     [self.tableView setNeedsDisplay];
     // TODO: Kalenderliste wird aktualiesiert wenn View aktiv ist.
@@ -154,10 +155,45 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-           
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [calendars objectAtIndex:indexPath.row]];
+    
+    
+    eventDB = [[[EKEventStore alloc] init] autorelease];    
+    EKCalendar *thisCalendar = [eventDB calendarWithIdentifier:[calendars objectAtIndex:indexPath.row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", thisCalendar.title];
+    
+    //Checkmark the secelectedCalendar in the tableView!
+    if ([[ud stringForKey:@"selectedCalendar"] isEqualToString:[calendars objectAtIndex:indexPath.row]]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    
+    //The calendar's color
+    cell.imageView.image = [self imageWithColor:[UIColor colorWithCGColor:thisCalendar.CGColor]];
+    
+    eventDB = nil;
+    [eventDB release];
     
     return cell;
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 12.0f, 12.0f);
+    CGRect rectStroke = CGRectMake(1.0f, 1.0f, 11.0f, 11.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillEllipseInRect(context, rect);
+    
+    /*
+    //CGContextSetStrokeColorWithColor(context, [color CGColor]);
+    CGContextSetRGBStrokeColor(context, 1.0, 0, 0, 1.0);
+    CGContextStrokeEllipseInRect(context, rectStroke);
+    */
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 /*
@@ -202,12 +238,7 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    /*
-    value = [ud stringForKey:@"selectedCalendar"];
-    
-    NSLog(@"%@",value);
-    
+{    
     for (NSInteger i=0; i<[tableView numberOfRowsInSection:0]; i++) {
         NSIndexPath *ip = [NSIndexPath indexPathForRow:i inSection:0];
         
@@ -221,14 +252,13 @@
     
     UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
     
-    EKCalendar *thisCalendar = [calendars objectAtIndex:indexPath.row];
-    NSLog(@"%@", thisCalendar);
+    eventDB = [[[EKEventStore alloc] init] autorelease];
+    [ud setObject:[calendars objectAtIndex:indexPath.row] forKey:@"selectedCalendar"];
+    eventDB = nil;
+    [eventDB release];
     
-    [ud setObject:thisCalendar forKey:@"selectedCalendar"];
-    
-    newCell.accessoryType = UITableViewCellAccessoryCheckmark;
-    newCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    */
+    newCell.accessoryType = UITableViewCellAccessoryCheckmark;    
+    newCell.selectionStyle = UITableViewCellSelectionStyleNone;    
 }
 
 @end

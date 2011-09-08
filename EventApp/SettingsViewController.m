@@ -91,6 +91,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self.tableView reloadData];
+    
     value = [ud boolForKey:@"datePickerPrefKey"];
     if(value){
         [datePickerSwitch setOn:YES];
@@ -177,7 +179,12 @@
                 break;
             case 1:
                 cell.textLabel.text = @"Calendar";
-                cell.detailTextLabel.text = @"Käsebrot";
+                
+                eventDB = [[[EKEventStore alloc] init] autorelease];    
+                EKCalendar *thisCalendar = [eventDB calendarWithIdentifier:[ud stringForKey:@"selectedCalendar"]];                
+                cell.detailTextLabel.text = thisCalendar.title;
+                eventDB = nil;
+                [eventDB release];
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 
                 break;

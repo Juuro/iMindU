@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EventKit/EventKit.h>
 
 @class CalendarPickerViewController;
 @class AlarmSignalPickerViewController;
@@ -16,6 +17,7 @@
     UISwitch *keyboardAtStartSwitch;
     UISwitch *datePickerSwitch;
     
+    EKEventStore *eventDB;
     NSUserDefaults *ud;
     
     BOOL value;
