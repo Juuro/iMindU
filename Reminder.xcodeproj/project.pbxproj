@@ -21,6 +21,8 @@
 		B3A66DFA12DD64AF00EE90EE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A66DF912DD64AF00EE90EE /* EventKit.framework */; };
 		B3AB3C7F13A0461F00D47F3E /* CalendarPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AB3C7E13A0461F00D47F3E /* CalendarPickerViewController.m */; };
 		B3AB3C8313A0471400D47F3E /* AlarmSignalPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AB3C8213A0471400D47F3E /* AlarmSignalPickerViewController.m */; };
+		B3DBE42F151A5BF700409C6A /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DBE42D151A5BF700409C6A /* AboutViewController.m */; };
+		B3DBE430151A5BF700409C6A /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DBE42E151A5BF700409C6A /* AboutViewController.xib */; };
 		B3E35E6E13732F130086CFAB /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E6D13732F130086CFAB /* Entitlements.plist */; };
 		B3E35E721373412B0086CFAB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E711373412B0086CFAB /* Default@2x.png */; };
 		B3E35E8813734D670086CFAB /* bg-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E8A13734D670086CFAB /* bg-texture.png */; };
@@ -59,6 +61,9 @@
 		B3AB3C7E13A0461F00D47F3E /* CalendarPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPickerViewController.m; sourceTree = "<group>"; };
 		B3AB3C8113A0471400D47F3E /* AlarmSignalPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmSignalPickerViewController.h; sourceTree = "<group>"; };
 		B3AB3C8213A0471400D47F3E /* AlarmSignalPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmSignalPickerViewController.m; sourceTree = "<group>"; };
+		B3DBE42C151A5BF700409C6A /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		B3DBE42D151A5BF700409C6A /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		B3DBE42E151A5BF700409C6A /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		B3E35E6D13732F130086CFAB /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		B3E35E711373412B0086CFAB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B3E35E8913734D670086CFAB /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/bg-texture.png"; sourceTree = "<group>"; };
@@ -145,6 +150,9 @@
 				B3706D0412DD6457002889EF /* EventAppViewController.xib */,
 				B3EB2633138F150000480A26 /* SettingsViewController.h */,
 				B3EB2634138F150000480A26 /* SettingsViewController.m */,
+				B3DBE42C151A5BF700409C6A /* AboutViewController.h */,
+				B3DBE42D151A5BF700409C6A /* AboutViewController.m */,
+				B3DBE42E151A5BF700409C6A /* AboutViewController.xib */,
 				B3AB3C8113A0471400D47F3E /* AlarmSignalPickerViewController.h */,
 				B3AB3C8213A0471400D47F3E /* AlarmSignalPickerViewController.m */,
 				B3AB3C7D13A0461F00D47F3E /* CalendarPickerViewController.h */,
@@ -242,6 +250,7 @@
 				B3E35E9913734FFE0086CFAB /* button.png in Resources */,
 				B3EB2631138F146300480A26 /* SettingsViewController.xib in Resources */,
 				B34C98AD1393D92000133198 /* Settings.bundle in Resources */,
+				B3DBE430151A5BF700409C6A /* AboutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +267,7 @@
 				B3EB2635138F150000480A26 /* SettingsViewController.m in Sources */,
 				B3AB3C7F13A0461F00D47F3E /* CalendarPickerViewController.m in Sources */,
 				B3AB3C8313A0471400D47F3E /* AlarmSignalPickerViewController.m in Sources */,
+				B3DBE42F151A5BF700409C6A /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +326,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -333,6 +344,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -353,6 +365,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventApp/EventApp-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "EventApp/Reminder-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Reminder;
@@ -370,6 +383,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventApp/EventApp-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "EventApp/Reminder-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Reminder;
@@ -388,6 +402,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -408,6 +423,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventApp/EventApp-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "EventApp/Reminder-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Reminder;

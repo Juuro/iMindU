@@ -9,12 +9,14 @@
 #import "SettingsViewController.h"
 #import "CalendarPickerViewController.h"
 #import "AlarmSignalPickerViewController.h"
+#import "AboutViewController.h"
 
 
 @implementation SettingsViewController
 
 @synthesize calendarPickerViewController;
 @synthesize alarmsignalPickerViewController;
+@synthesize aboutViewController;
 
 - (id)init
 {
@@ -24,6 +26,7 @@
         
         calendarPickerViewController = [[CalendarPickerViewController alloc] init];
         alarmsignalPickerViewController = [[AlarmSignalPickerViewController alloc] init];
+        aboutViewController = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:[NSBundle mainBundle]];
     }
     return self;
 }
@@ -90,9 +93,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated
-{
-    [self.tableView reloadData];
-    
+{    
     value = [ud boolForKey:@"datePickerPrefKey"];
     if(value){
         [datePickerSwitch setOn:YES];
@@ -108,6 +109,9 @@
     else {
         [keyboardAtStartSwitch setOn:NO];
     }
+    
+    [self.tableView reloadData];
+    
     [super viewWillAppear:animated];
 }
 
@@ -146,7 +150,7 @@
 {
     switch (section) {
 		case 0:
-			return 4;
+			return 2;
             
 		case 1:
 			return 1;
@@ -172,12 +176,6 @@
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = @"Alarmsignal";
-                cell.detailTextLabel.text = @"Ringelingeling";
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                
-                break;
-            case 1:
                 cell.textLabel.text = @"Calendar";
                 
                 eventDB = [[[EKEventStore alloc] init] autorelease];    
@@ -188,20 +186,28 @@
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 
                 break;
-            case 2:
-                cell.textLabel.text = @"Datepicker";
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                               
-				[datePickerSwitch addTarget:self action:@selector(toggleDatePicker:) forControlEvents:UIControlEventValueChanged];
-				cell.accessoryView = datePickerSwitch;
-                break;
-            case 3:
+            case 1:
                 cell.textLabel.text = @"Keyboard on launch";
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 
 				[keyboardAtStartSwitch addTarget:self action:@selector(toggleKeyboardAtStart:) forControlEvents:UIControlEventValueChanged];
 				cell.accessoryView = keyboardAtStartSwitch;
                 break;
+            /*
+            case 1:
+                 cell.textLabel.text = @"Datepicker";
+                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                 
+                 [datePickerSwitch addTarget:self action:@selector(toggleDatePicker:) forControlEvents:UIControlEventValueChanged];
+                 cell.accessoryView = datePickerSwitch;
+                 break;
+            case 3:
+                cell.textLabel.text = @"Alarmsignal";
+                cell.detailTextLabel.text = @"Ringelingeling";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                
+                break;
+            */
             default:
                 break;
         }
@@ -283,15 +289,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if(indexPath.row == 0){
-        [self.navigationController pushViewController:alarmsignalPickerViewController animated:YES];
-        
+    if(indexPath.section==0){
+        if(indexPath.row == 0){
+            [self.navigationController pushViewController:calendarPickerViewController animated:YES];
+        }
+        /*
+        else if(indexPath.row == 1){
+            [self.navigationController pushViewController:alarmsignalPickerViewController animated:YES];
+        }
+        */
     }
-    else if(indexPath.row == 1){
-        [self.navigationController pushViewController:calendarPickerViewController animated:YES];
-    }
-    else {
-    
+    else if(indexPath.section==1){
+        if (indexPath.row==0) {
+            [self.navigationController pushViewController:aboutViewController animated:YES];
+        }
     }
     
     // Navigation logic may go here. Create and push another view controller.

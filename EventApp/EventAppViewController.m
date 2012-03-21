@@ -11,6 +11,9 @@
 #import <Foundation/Foundation.h>
 #import "SettingsViewController.h"
 
+
+#define kCustomButtonHeight		30.0
+
 @implementation EventAppViewController
 
 @synthesize titleField;
@@ -28,18 +31,8 @@
     if (self) {
         settingsViewController = [[SettingsViewController alloc] init];
         
-        [self setTitle: @"Reminder"];
+        //[self setTitle: @"Reminder"];
         
-        //self.segment;
-        
-        //Configure rightBarButtonItem
-        self.navigationItem.rightBarButtonItem = 
-        [[[UIBarButtonItem alloc] 
-          initWithTitle:@"Settings"
-          style:UIBarButtonItemStyleBordered
-          target:self
-          action: @selector(pushSettings:)] 
-         autorelease];
     }
     return self;
 }
@@ -48,6 +41,36 @@
 - (void)viewDidLoad
 {
     ud = [NSUserDefaults standardUserDefaults];
+    
+    /*
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:
+                                            [NSArray arrayWithObjects:
+                                             @"In",
+                                             @"At",
+                                             nil]];
+    [segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
+    segmentedControl.frame = CGRectMake(150, 0, 90, kCustomButtonHeight);
+    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    segmentedControl.momentary = YES;
+    
+    
+    UIBarButtonItem *segmentBarItem = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
+    [segmentedControl release];
+    
+     
+    //self.navigationItem.rightBarButtonItem = segmentBarItem;
+    self.navigationItem.leftBarButtonItem = segmentBarItem;
+    [segmentBarItem release];
+    */
+     
+    //Configure rightBarButtonItem
+    self.navigationItem.rightBarButtonItem = 
+    [[[UIBarButtonItem alloc] 
+      initWithTitle:@"Settings"
+      style:UIBarButtonItemStyleBordered
+      target:self
+      action: @selector(pushSettings:)] 
+     autorelease];
     
     value = [ud boolForKey:@"keyboardPrefKey"];    
     if(value){
@@ -67,6 +90,13 @@
     }
      
     [super viewDidLoad];
+}
+
+- (IBAction)segmentAction:(id)sender
+{
+	// The segmented control was clicked, handle it here 
+	//UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+	//NSLog(@"Segment clicked: %d", segmentedControl.selectedSegmentIndex);
 }
 
 - (BOOL)textField:(UITextField *)thetextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)text {

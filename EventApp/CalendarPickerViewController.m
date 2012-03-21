@@ -93,6 +93,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self getCalendarTitles];
+    [self.tableView reloadData];
     
     [super viewWillAppear:animated];
 }

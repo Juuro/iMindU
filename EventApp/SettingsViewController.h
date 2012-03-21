@@ -11,6 +11,7 @@
 
 @class CalendarPickerViewController;
 @class AlarmSignalPickerViewController;
+@class AboutViewController;
 
 @interface SettingsViewController : UITableViewController {
     
@@ -24,10 +25,12 @@
     
     CalendarPickerViewController *calendarPickerViewController;
     AlarmSignalPickerViewController *alarmsignalPickerViewController;
+    AboutViewController *aboutViewController;
 }
 
 
 @property (nonatomic, retain) CalendarPickerViewController *calendarPickerViewController;
 @property (nonatomic, retain) AlarmSignalPickerViewController *alarmsignalPickerViewController;
+@property (nonatomic, retain) AboutViewController *aboutViewController;
 
 @end
