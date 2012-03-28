@@ -14,6 +14,8 @@
 
 @implementation AboutViewController
 
+@synthesize email;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,6 +29,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    email.text = @"Reminder ist ein kleines Helferlein um schnell Erinnerungen in den Kalender des iPhones zu setzen. Reminder hat keinen eigenen, selbst verwalteten Kalender, sondern nutzt den normalen iOS-Kalender der Kalender-App. Das hat den Vorteil, dass die Erinnerungen, dank iCloud, auch zu anderen iOS-Geräten, Macs und Computern synchronisisiert wird.\n\nWeitere Informationen unter http://www.dreamapp.de/reminder\n\nAnregungen und Fragen:\nTwitter:\t@Juuro\nE-Mail:\tmail@sebastian-engel.de\n\nSebastian Engel\nArgonnenstraße 6\n72108 Rottenburg\nGermany\n\nVersion 1.0";
+    email.text = @"Reminder is a small helper tool for fast adding a reminder to the iPhone calendar.Reminder doesn't use an own calender but rather the normal iOS calendar from the Calendar-App. This has the advantage that the reminders will be synchronized over iCloud to your other iOS-Devices, Macs and Computers.\n\nAdditional informations: http://www.dreamapp.de/reminder\n\nSuggestions and Questions:\nTwitter:\t@Juuro\nE-Mail:\tmail@sebastian-engel.de\n\nSebastian Engel\nArgonnenstraße 6\n72108 Rottenburg\nGermany\n\nVersion 1.0";
+    email.dataDetectorTypes = UIDataDetectorTypeLink;
 }
 
 - (void)viewDidUnload

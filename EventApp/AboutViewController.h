@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+ 
+@interface AboutViewController : UIViewController {
+    UITextView *email;
+}
 
-@interface AboutViewController : UIViewController
+
+@property (nonatomic, retain) IBOutlet UITextView *email;
 
 @end
