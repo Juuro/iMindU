@@ -167,7 +167,8 @@
          
         
         UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@" Alarm hinzugefügt:"
+                              //initWithTitle:@" Alarm hinzugefügt:"
+                              initWithTitle:@" Alarm added:"
                               message:alertText
                               delegate:nil
                               cancelButtonTitle:@"Okay"

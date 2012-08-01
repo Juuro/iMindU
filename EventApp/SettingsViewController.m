@@ -215,7 +215,7 @@
     else if(indexPath.section == 1) {
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = @"About Reminder";
+                cell.textLabel.text = @"About iMindU";
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 break;
                 

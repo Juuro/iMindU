@@ -24,7 +24,6 @@
 		B3DBE42F151A5BF700409C6A /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DBE42D151A5BF700409C6A /* AboutViewController.m */; };
 		B3DBE430151A5BF700409C6A /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DBE42E151A5BF700409C6A /* AboutViewController.xib */; };
 		B3E35E6E13732F130086CFAB /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E6D13732F130086CFAB /* Entitlements.plist */; };
-		B3E35E721373412B0086CFAB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E711373412B0086CFAB /* Default@2x.png */; };
 		B3E35E8813734D670086CFAB /* bg-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E8A13734D670086CFAB /* bg-texture.png */; };
 		B3E35E8F13734EC70086CFAB /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E8E13734EC70086CFAB /* note.png */; };
 		B3E35E9113734F2F0086CFAB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E9013734F2F0086CFAB /* Default.png */; };
@@ -34,6 +33,9 @@
 		B3E35E9913734FFE0086CFAB /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E35E9513734FFE0086CFAB /* button.png */; };
 		B3EB2631138F146300480A26 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3EB2630138F146300480A26 /* SettingsViewController.xib */; };
 		B3EB2635138F150000480A26 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EB2634138F150000480A26 /* SettingsViewController.m */; };
+		B3ED25FD152FD9E400F0BCB8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ED25FC152FD9E400F0BCB8 /* Default@2x.png */; };
+		B3ED25FF152FDA3400F0BCB8 /* bell red-57.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ED25FE152FDA3400F0BCB8 /* bell red-57.png */; };
+		B3ED2601152FDA4900F0BCB8 /* bell red-114.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ED2600152FDA4900F0BCB8 /* bell red-114.png */; };
 		B3FE03E913724B22000639EC /* bell-114.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FE03E813724B22000639EC /* bell-114.png */; };
 		B3FE03EB13724B27000639EC /* bell-57.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FE03EA13724B27000639EC /* bell-57.png */; };
 		B3FE03ED13724B2F000639EC /* bell-72.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FE03EC13724B2F000639EC /* bell-72.png */; };
@@ -42,11 +44,11 @@
 /* Begin PBXFileReference section */
 		B34C98AC1393D92000133198 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B3506A5912DD9614006F889E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
-		B3706CE812DD6457002889EF /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3706CE812DD6457002889EF /* iMindU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMindU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3706CEC12DD6457002889EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3706CEE12DD6457002889EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3706CF012DD6457002889EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B3706CF412DD6457002889EF /* Reminder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reminder-Info.plist"; sourceTree = "<group>"; };
+		B3706CF412DD6457002889EF /* iMindU-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMindU-Info.plist"; sourceTree = "<group>"; };
 		B3706CF612DD6457002889EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3706CF812DD6457002889EF /* EventApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventApp-Prefix.pch"; sourceTree = "<group>"; };
 		B3706CF912DD6457002889EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,7 +67,6 @@
 		B3DBE42D151A5BF700409C6A /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		B3DBE42E151A5BF700409C6A /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		B3E35E6D13732F130086CFAB /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
-		B3E35E711373412B0086CFAB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B3E35E8913734D670086CFAB /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/bg-texture.png"; sourceTree = "<group>"; };
 		B3E35E8E13734EC70086CFAB /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
 		B3E35E9013734F2F0086CFAB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -76,6 +77,9 @@
 		B3EB2630138F146300480A26 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		B3EB2633138F150000480A26 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		B3EB2634138F150000480A26 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		B3ED25FC152FD9E400F0BCB8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B3ED25FE152FDA3400F0BCB8 /* bell red-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell red-57.png"; sourceTree = "<group>"; };
+		B3ED2600152FDA4900F0BCB8 /* bell red-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell red-114.png"; sourceTree = "<group>"; };
 		B3FE03E813724B22000639EC /* bell-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell-114.png"; sourceTree = "<group>"; };
 		B3FE03EA13724B27000639EC /* bell-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell-57.png"; sourceTree = "<group>"; };
 		B3FE03EC13724B2F000639EC /* bell-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell-72.png"; sourceTree = "<group>"; };
@@ -107,8 +111,10 @@
 		B3706CDD12DD6457002889EF = {
 			isa = PBXGroup;
 			children = (
+				B3ED2600152FDA4900F0BCB8 /* bell red-114.png */,
+				B3ED25FE152FDA3400F0BCB8 /* bell red-57.png */,
+				B3ED25FC152FD9E400F0BCB8 /* Default@2x.png */,
 				B3E35E9013734F2F0086CFAB /* Default.png */,
-				B3E35E711373412B0086CFAB /* Default@2x.png */,
 				B3E35E6D13732F130086CFAB /* Entitlements.plist */,
 				B3FE03EC13724B2F000639EC /* bell-72.png */,
 				B3FE03EA13724B27000639EC /* bell-57.png */,
@@ -122,7 +128,7 @@
 		B3706CE912DD6457002889EF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B3706CE812DD6457002889EF /* Reminder.app */,
+				B3706CE812DD6457002889EF /* iMindU.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,7 +180,7 @@
 				B3E35E9513734FFE0086CFAB /* button.png */,
 				B3E35E8A13734D670086CFAB /* bg-texture.png */,
 				B3E35E8E13734EC70086CFAB /* note.png */,
-				B3706CF412DD6457002889EF /* Reminder-Info.plist */,
+				B3706CF412DD6457002889EF /* iMindU-Info.plist */,
 				B3706CF512DD6457002889EF /* InfoPlist.strings */,
 				B3706CF812DD6457002889EF /* EventApp-Prefix.pch */,
 				B3706CF912DD6457002889EF /* main.m */,
@@ -185,9 +191,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B3706CE712DD6457002889EF /* Reminder */ = {
+		B3706CE712DD6457002889EF /* iMindU */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3706D0912DD6457002889EF /* Build configuration list for PBXNativeTarget "Reminder" */;
+			buildConfigurationList = B3706D0912DD6457002889EF /* Build configuration list for PBXNativeTarget "iMindU" */;
 			buildPhases = (
 				B3706CE412DD6457002889EF /* Sources */,
 				B3706CE512DD6457002889EF /* Frameworks */,
@@ -197,9 +203,9 @@
 			);
 			dependencies = (
 			);
-			name = Reminder;
+			name = iMindU;
 			productName = EventApp;
-			productReference = B3706CE812DD6457002889EF /* Reminder.app */;
+			productReference = B3706CE812DD6457002889EF /* iMindU.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +216,7 @@
 			attributes = {
 				LastUpgradeCheck = 0430;
 			};
-			buildConfigurationList = B3706CE212DD6457002889EF /* Build configuration list for PBXProject "Reminder" */;
+			buildConfigurationList = B3706CE212DD6457002889EF /* Build configuration list for PBXProject "iMindU" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -222,7 +228,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B3706CE712DD6457002889EF /* Reminder */,
+				B3706CE712DD6457002889EF /* iMindU */,
 			);
 		};
 /* End PBXProject section */
@@ -241,7 +247,6 @@
 				B3FE03EB13724B27000639EC /* bell-57.png in Resources */,
 				B3FE03ED13724B2F000639EC /* bell-72.png in Resources */,
 				B3E35E6E13732F130086CFAB /* Entitlements.plist in Resources */,
-				B3E35E721373412B0086CFAB /* Default@2x.png in Resources */,
 				B3E35E8F13734EC70086CFAB /* note.png in Resources */,
 				B3E35E9113734F2F0086CFAB /* Default.png in Resources */,
 				B3E35E9613734FFE0086CFAB /* button-highlight@2x.png in Resources */,
@@ -251,6 +256,9 @@
 				B3EB2631138F146300480A26 /* SettingsViewController.xib in Resources */,
 				B34C98AD1393D92000133198 /* Settings.bundle in Resources */,
 				B3DBE430151A5BF700409C6A /* AboutViewController.xib in Resources */,
+				B3ED25FD152FD9E400F0BCB8 /* Default@2x.png in Resources */,
+				B3ED25FF152FDA3400F0BCB8 /* bell red-57.png in Resources */,
+				B3ED2601152FDA4900F0BCB8 /* bell red-114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,8 +329,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -332,7 +340,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -341,7 +348,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Sebastian Engel";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_THUMB_SUPPORT = NO;
@@ -351,6 +360,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "BACE7ACA-7FC1-4090-A323-3B7431D2A354";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
@@ -360,15 +370,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventApp/EventApp-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
-				INFOPLIST_FILE = "EventApp/Reminder-Info.plist";
+				INFOPLIST_FILE = "EventApp/iMindU-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PRODUCT_NAME = Reminder;
+				PRODUCT_NAME = iMindU;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -379,15 +390,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sebastian Engel";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventApp/EventApp-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
-				INFOPLIST_FILE = "EventApp/Reminder-Info.plist";
+				INFOPLIST_FILE = "EventApp/iMindU-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PRODUCT_NAME = Reminder;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = iMindU;
+				PROVISIONING_PROFILE = "BACE7ACA-7FC1-4090-A323-3B7431D2A354";
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -398,9 +411,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]" = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -409,7 +421,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = "Ad Hoc";
@@ -418,44 +429,87 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]" = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventApp/EventApp-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
-				INFOPLIST_FILE = "EventApp/Reminder-Info.plist";
+				INFOPLIST_FILE = "EventApp/iMindU-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PRODUCT_NAME = Reminder;
+				PRODUCT_NAME = iMindU;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Ad Hoc";
 		};
+		B3ED25F9152FCC4900F0BCB8 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Sebastian Engel";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "BACE7ACA-7FC1-4090-A323-3B7431D2A354";
+				SDKROOT = iphoneos;
+			};
+			name = Distribution;
+		};
+		B3ED25FA152FCC4900F0BCB8 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sebastian Engel";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EventApp/EventApp-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "EventApp/iMindU-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = iMindU;
+				PROVISIONING_PROFILE = "BACE7ACA-7FC1-4090-A323-3B7431D2A354";
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distribution;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B3706CE212DD6457002889EF /* Build configuration list for PBXProject "Reminder" */ = {
+		B3706CE212DD6457002889EF /* Build configuration list for PBXProject "iMindU" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3706D0712DD6457002889EF /* Debug */,
 				B3706D0812DD6457002889EF /* Release */,
+				B3ED25F9152FCC4900F0BCB8 /* Distribution */,
 				B3E35E6F13732F700086CFAB /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Distribution;
 		};
-		B3706D0912DD6457002889EF /* Build configuration list for PBXNativeTarget "Reminder" */ = {
+		B3706D0912DD6457002889EF /* Build configuration list for PBXNativeTarget "iMindU" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3706D0A12DD6457002889EF /* Debug */,
 				B3706D0B12DD6457002889EF /* Release */,
+				B3ED25FA152FCC4900F0BCB8 /* Distribution */,
 				B3E35E7013732F700086CFAB /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Distribution;
 		};
 /* End XCConfigurationList section */
 	};
